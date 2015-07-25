@@ -1,0 +1,43 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template-dashboard.xhtml">
+
+	<ui:param name="title" value="Login" />
+	<ui:define name="maincontent">
+		<div class="container">
+			<h:form id="form" styleClass="form-group">
+				<h:graphicImage value="/resources/images/dmit2015.jpg"
+					style="vertical-align: middle;" />
+				<p:messages id="messages" />
+				<h2 style="font-family: verdana; color: #0066CC">#{param.fbm}</h2>
+				<h4 style="font-family: verdana; color: #006633">#{param.fem_1}</h4>
+				<h4 style="font-family: verdana; color: #006633">#{param.fem_2}</h4>
+				<br />
+				<p:panel header="Account Info.">
+					<p:panelGrid columns="2">
+						<p:outputLabel for="email" value="E-Mail:" />
+						<p:inputText id="email" value="#{loginBean.emailAddress}"/>
+						
+						<p:outputLabel for="password" value="Password:" />
+						<p:password id="password" value="#{loginBean.password}"/>
+					</p:panelGrid>										
+				</p:panel>
+
+				<br />
+				<span style="float:left;width:80px;margin-left:30px;">
+					<h:commandButton value="Sign In" styleClass="btn btn-primary" 
+					action="#{loginBean.login()}"/>
+				</span>
+				<span style="float:left;width:80px;">
+					<h:commandButton value="Sign Up" styleClass="btn btn-success" 
+						action="userRegister"/>	
+				</span>		
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

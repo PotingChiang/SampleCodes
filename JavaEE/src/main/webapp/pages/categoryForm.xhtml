@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template-dashboard.xhtml">
+	<ui:param name="title" value="Category Form" />
+	<ui:define name="maincontent">
+		<div class="container">
+			<h2>Category Form</h2>
+			<h:form id="form" enctype="multipart/form-data">
+				<p:messages id="messages" />
+				
+				<p:panel header="Category Form">
+					<h:panelGrid columns="2">
+						<p:outputLabel for="name" value="Name:" />
+						<p:inputText id="name" value="#{categoryBean.currentCategory.categoryName}"/>
+						
+						<p:outputLabel for="description" value="Description:" />
+						<p:inputText id="description" value="#{categoryBean.currentCategory.description}"/>
+    					<div class="form-group">
+							<p:outputLabel for="categoryImageFile" value ="Image: " />
+							
+							<p:fileUpload id="categoryImageFile" mode="simple" value="#{categoryBean.uploadedFile}" />
+							
+							<p:message for="categoryImageFile" />
+						</div>
+						<h:panelGroup>
+							<p:commandButton value="Add Category" 
+								rendered="#{not categoryBean.editMode}"
+								update=":form:messages, :form:name, :form:description" 
+							 	ajax="false"
+								actionListener="#{categoryBean.addCategory}">
+							</p:commandButton>
+							<p:commandButton value="Update Category" 
+								ajax="false" 
+								rendered="#{categoryBean.editMode}" 
+								action="#{categoryBean.updateCategory}" >
+							</p:commandButton>
+							<p:commandButton value="Cancel" ajax="false" 
+								rendered="#{categoryBean.editMode}"
+								actionListener="#{categoryBean.cancel}">
+								<f:setPropertyActionListener value="false" target="#{categoryBean.editMode}" />
+							</p:commandButton>	
+						</h:panelGroup>
+					</h:panelGrid>				
+					<p:commandLink value="Category List" ajax="false" immediate="true" action="/pages/categoryList?faces-redirect=true"/>
+				</p:panel>	
+			</h:form>
+		</div>
+	</ui:define>
+</ui:composition>

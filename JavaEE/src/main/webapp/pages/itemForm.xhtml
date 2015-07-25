@@ -1,0 +1,78 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template-dashboard.xhtml">
+	
+	<ui:param name="title" value="Item Form" />
+	
+	<ui:define name="maincontent">
+		<div class="container">
+			
+			<h2>Item Form</h2>
+			<h:form id="form" enctype="multipart/form-data">
+				<p:messages id="messages" />
+				<p:panel header="Item Form">
+					<h:panelGrid>
+						<div class="form-group">
+							<p:outputLabel for="itemName" value="Item Name:" />
+							<p:inputText id="itemName" value="#{itemBean.currentItem.itemName}" />
+							<p:message for="itemName" />
+						</div>
+						
+						<div class="form-group">						
+							<p:outputLabel for="description" value="Description:" />
+							<p:inputTextarea id="description" cols="35" rows="2" value="#{itemBean.currentItem.description}"></p:inputTextarea>
+							<p:message for="description" />
+						</div>
+						
+						<div class="form-group">
+							<p:outputLabel for="price" value ="Price: " />
+							<p:inputText id="price" size="10" style="text-align: right" value="#{itemBean.currentItem.price}" />
+							<p:message for="price" />
+						</div>
+						
+						<div class="form-group">
+							<p:outputLabel for="itemImageFile" value ="Image: " />
+							<p:fileUpload id="itemImageFile" mode="simple" value="#{itemBean.uploadedFile}" />
+							<p:message for="itemImageFile" />
+						</div>
+						
+						<div class="form-group">
+							<p:outputLabel for="itemCategory" value="Category: " />
+							<p:selectOneMenu id="itemCategory" value="#{itemBean.selectedCategoryId}">
+								<f:selectItems value="#{itemBean.categoryOptions}" />
+							</p:selectOneMenu>
+							<p:message for="itemCategory" />
+						</div>
+						
+						<h:panelGroup>
+							<p:commandButton value="Add Item" 
+								rendered="#{not itemBean.editMode}"
+								update=":form:messages, :form:itemName, :form:description, :form:itemCategory, form:itemImageFile, form:price" 
+								actionListener="#{itemBean.addItem()}"
+								ajax="false">
+							</p:commandButton>
+							<p:commandButton value="Update Item" 
+								ajax="false" 
+								rendered="#{itemBean.editMode}" 
+								action="#{itemBean.updateItem()}" >
+							</p:commandButton>
+							<p:commandButton value="Cancel" ajax="false" 
+								rendered="#{itemBean.editMode}"
+								actionListener="#{itemBean.cancel()}">
+								<f:setPropertyActionListener value="false" target="#{itemBean.editMode}" />
+							</p:commandButton>	
+						</h:panelGroup>
+					</h:panelGrid>		
+				</p:panel>
+				
+			</h:form>
+			
+		</div>
+	</ui:define>
+
+</ui:composition>

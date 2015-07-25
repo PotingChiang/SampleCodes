@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Community</key>
+		<string>Facebook</string>
+		<key>Link</key>
+		<string>https://www.facebook.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>Twitter</string>
+		<key>Link</key>
+		<string>https://twitter.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>Youtube</string>
+		<key>Link</key>
+		<string>https://www.youtube.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>Instagram</string>
+		<key>Link</key>
+		<string>http://blog.instagram.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>LinkedIn</string>
+		<key>Link</key>
+		<string>https://www.linkedin.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>flickr</string>
+		<key>Link</key>
+		<string>https://www.flickr.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>Pinterest</string>
+		<key>Link</key>
+		<string>https://www.pinterest.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>Google+</string>
+		<key>Link</key>
+		<string>https://plus.google.com/</string>
+	</dict>
+	<dict>
+		<key>Community</key>
+		<string>GITHub</string>
+		<key>Link</key>
+		<string>https://github.com/</string>
+	</dict>
+</array>
+</plist>

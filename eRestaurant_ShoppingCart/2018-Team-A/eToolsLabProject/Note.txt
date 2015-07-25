@@ -1,0 +1,18 @@
+
+Add data to shopping cart
+  -> AddtoShoppingCart(IPrincipal user(??)/name, int productId(Need + ID to POCOs or try oncommandarguement), int quantity)
+     {  (1)
+	Update QuantityOnHand_StockItemTable
+  		-> context.StockItem stockItem 
+  		-> UpdateStockItem(stockItem)
+
+  	(2)
+        var cartID = int.Pars(select cartID from stockItem where user/name = = user/name);
+
+	context.shoppingCart shoppingCart = new context.shopperingCart(); 
+        shoppingCart.cartID = cartID;
+	shoppingCart.stockItemID = productID;
+	shoppingCart.quantity = quantity.
+
+	controller.addShopperCart(shoppingCart)
+     }

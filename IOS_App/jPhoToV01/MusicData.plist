@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Pop</key>
+	<array>
+		<string>Carpenter_YesterdayOnceMore</string>
+		<string>SNSD_The Boys</string>
+		<string>Wayne_Down</string>
+	</array>
+	<key>Classic</key>
+	<array>
+		<string>Canon</string>
+		<string>CastleInSky</string>
+	</array>
+</dict>
+</plist>

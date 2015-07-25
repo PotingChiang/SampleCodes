@@ -1,0 +1,46 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/WEB-INF/template-dashboard.xhtml">
+	
+	<ui:param name="title" value="Categories" />
+	
+	<ui:define name="maincontent">
+		<div class="container">
+			
+			<h2>Category List</h2>
+			<h:form id="form">
+				<p:messages id="messages" />
+				<p:dataTable id="categories" value="#{categoryBean.categories}" var="category" >
+				
+					<p:column headerText="Name" sortBy="#{category.categoryName}">
+						<h:outputText value="#{category.categoryName}" />
+					</p:column>
+						
+					<p:column headerText="Description" sortBy="#{category.description}">
+						<h:outputText value="#{category.description}" />
+					</p:column>
+					
+					<p:column>
+					<p:commandButton value="Edit" ajax="false"  icon="ui-icon-pencil" action="/pages/categoryForm?faces-redirect=true">
+						<f:setPropertyActionListener value="true" target="#{categoryBean.editMode}" />
+						<f:setPropertyActionListener value="#{category}" target="#{categoryBean.currentCategory}" />
+					</p:commandButton>
+					<p:commandButton value="Delete" icon="ui-icon-trash" update=":form:messages, :form:categories" actionListener="#{categoryBean.deleteCategory(category)}">
+						<p:confirm header="Delete Confirmation" message="Are you sure you want to delete this record?" icon="ui-icon-alert" />
+					</p:commandButton>			
+					</p:column>	        
+					</p:dataTable>  		
+					<p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+				        <p:commandButton value="Yes sure" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+				        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+				    </p:confirmDialog>    
+				    <p:commandLink value="New Category" ajax="false" immediate="true" action="#{categoryBean.cancel()}"/>					
+				</h:form>
+			</div>
+		</ui:define>
+</ui:composition>

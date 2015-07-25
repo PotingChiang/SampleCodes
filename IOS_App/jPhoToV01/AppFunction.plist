@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Function</key>
+		<string>j-Photo</string>
+		<key>Description</key>
+		<string>This is created by Poting Chiang. You can use this finction to Watch/Play photos that you have choosen and/or Listen to music that you have selected at the same time as well.</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>Album Picker</string>
+		<key>Description</key>
+		<string>You can Save and/or Select photos that you like through here.
+
+You also can lookup, add, update and delete your own photos&apos; description through this function. </string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>Music Picker</string>
+		<key>Description</key>
+		<string>You can Save and/or Select Music that you like through here. 
+
+You can also lookup lyrics of songs in this app.</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>Social Community</string>
+		<key>Description</key>
+		<string>This function is allowed you to browse most popular internet social community.
+
+Ex: Facebook, Twitter, Youtube and GitHub...</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>Notes Pad</string>
+		<key>Description</key>
+		<string>You can note down memos here and save your memo in the apple photo library. 
+
+You also can make an event reminder in apple calendar through this function.</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>Bingo Game</string>
+		<key>Description</key>
+		<string>It is a sample game from textbook</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>UserInfo &amp; Settings</string>
+		<key>Description</key>
+		<string>This shows your information and your location.
+
+You can make changes in the &quot;App Settings&quot; and get your location by clicking &quot;Map Icon&quot;.
+
+And you also can change the background in this function through &quot;App Settings.&quot;</string>
+	</dict>
+	<dict>
+		<key>Function</key>
+		<string>App Info</string>
+		<key>Description</key>
+		<string>This function introduces this app&apos;s all information and functions.</string>
+	</dict>
+</array>
+</plist>

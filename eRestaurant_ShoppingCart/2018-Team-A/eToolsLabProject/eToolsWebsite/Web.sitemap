@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode description="This is the root node. DO NOT DISPLAY">
+    <siteMapNode url="~/Default.aspx" title="Home"  description="Home" />
+    <siteMapNode url="~/About.aspx" title="About"  description="About" />
+    <siteMapNode url="~/Pages/Purchasing.aspx" title="Purchasing"  description="Purchasing" />
+    <siteMapNode url="~/Pages/Security/DefaultSecurity.aspx" title="Security"  description="Security" />
+    <siteMapNode title="Sales" description="Sales menu group">
+      <siteMapNode url="~/Pages/Sales/ShoppingProduct.aspx" title="Shopping" description="Shopping Product Page" />
+      <siteMapNode url="~/Pages/Sales/Customer_Info.aspx" title="Customer Informatoin" description="CustomerInfo Page" />
+      <siteMapNode url="~/Pages/Sales/ShoppingCart.aspx" title="View/Edit Cart" description="Shopping Cart Page" />
+    
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>
